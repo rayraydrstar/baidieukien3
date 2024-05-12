@@ -1,0 +1,151 @@
+@charset "UTF-8";
+
+@import url('https://fonts.cdnfonts.com/css/josefin-sans');
+
+@import url('https://fonts.cdnfonts.com/css/gochi-hand');
+
+* {
+	font-family: 'Josefin Sans', sans-serif;
+}
+
+body {
+	margin: 0;
+	padding: 0;
+	background-color: rgb(242, 247, 245);
+}
+
+.main-menu {
+	width: 100%;
+	position: fixed;
+}
+
+.banner {
+	color: rgb(242, 247, 245);
+	background-color: #00473e;
+	text-align: center;
+	padding: 10px;
+	color: #f2f7f5;
+	border: 3px solid black;
+}
+
+.horizontal-menu {
+	display: flex;
+	justify-content: center;
+	background-color: rgb(242, 247, 245);
+	padding: 10px;
+	font-size: 120%;
+	font-weight: 500;
+	border: 3px solid black;
+	border-top: 0px;
+	border-bottom: 0px;
+}
+
+.horizontal-menu a {
+	padding-right: 15px;
+	text-decoration: none;
+	color: #00473e;
+}
+
+.horizontal-menu a:hover {
+	color: #c79731;
+}
+
+.vertical-menu {
+	list-style-type: none;
+	margin-top: 10.2%;
+	padding: 0;
+	width: 15%;
+	background-color: rgb(242, 247, 245);
+	position: -webkit-sticky;
+	position: fixed;
+	height: 100%;
+	overflow: auto;
+	border: 3px solid black;
+}
+
+li a {
+	display: block;
+	color: #00473e;
+	padding: 8px 16px;
+	text-decoration: none;
+}
+
+li a.active {
+	background-color: #00473e;
+	color: white;
+}
+
+li a:hover:not(.active) {
+	background-color: #c79731;
+	color: white;
+}
+
+/* style của index từ đây */
+.main {
+	margin-top: 10.2%;
+	width: 98%;
+	top: 0;
+	bottom: 0;
+	margin-left: 15%;
+	padding: 50px 16px;
+	color: #00473e;
+	overflow-y: auto;
+	position: fixed;
+	border-right: 3px solid black;
+	border-top: 3px solid black;
+}
+
+.product-list {
+	display: grid;
+	grid-template-columns: auto auto auto;
+	row-gap: 50px;
+	padding-right: 50px;
+	padding-left: 50px;
+}
+
+.product {
+	width: 250px;
+	height: 100%;
+	border: 3px solid black;
+	text-align: center;
+}
+
+/* style cho detail */
+.product-detail {
+	display: flex;
+	font-size: 150%;
+}
+
+.product-detail img {
+	margin-left: 20%;
+}
+
+.description {
+	margin-left: 30px;
+}
+
+.btn {
+	display: block;
+	padding: 20px 10px 20px 10px;
+	text-align: center;
+	text-decoration: none;
+	color: white;
+}
+
+.update {
+	background-color: #faae2b;
+}
+
+.delete {
+	margin-left: 15px;
+	background-color: #fa5246;
+}
+
+/* style phần form */
+.product-form {
+	font-size: 190%;
+}
+
+.error {
+	color: #fa5246;
+}
