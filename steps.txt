@@ -14,7 +14,7 @@
 
 8. Tạo các entity:
 	a. Các thuộc tính	
-	b. Các annotation (@Column, validate, @Id, @GeneratedValue)
+	b. Các annotation (@Column, validate, @Id, @GeneratedValue, @Transient, @ManyToOne...)
 	c.Construction - Get/Set
 
 9. Tạo interfaceDAO - implementInterfaceDAO
