@@ -120,6 +120,8 @@ public class ProductController {
 	
 	@RequestMapping(path = "/sort_by_category")
 	private String sortByCategory(@RequestParam(name = "maDanhMuc", required = true) Integer maDanhMuc, Model m) {
+		//Phần sort theo danh mục không có layout, các danh mục ở project này là làm sẵn ở view menu, tham số các danh mục được
+		//truyền vào thuộc tính href của thẻ a
 		ISanPhamDAO spDAO = new ImplSanPhamDAO();
 		List<SanPham> lstSanPham = spDAO.sortByCategory(maDanhMuc);
 		m.addAttribute("lstSanPham", lstSanPham);

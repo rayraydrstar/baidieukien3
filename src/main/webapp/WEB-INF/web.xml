@@ -28,6 +28,7 @@
 	</filter-mapping>
 
 	<servlet>
+		<!-- Đặt theo tên project -->
 		<servlet-name>SimpleECommerce</servlet-name>
 		<servlet-class>
 		org.springframework.web.servlet.DispatcherServlet
@@ -39,6 +40,7 @@
 		<load-on-startup>1</load-on-startup>
 	</servlet>
 
+	<!-- Đặt theo tên project -->
 	<servlet-mapping>
 		<servlet-name>SimpleECommerce</servlet-name>
 		<url-pattern>/</url-pattern>

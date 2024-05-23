@@ -111,6 +111,7 @@ public class ImplSanPhamDAO implements ISanPhamDAO{
 		try {
 			String hql = "from SanPham WHERE tenSanPham LIKE :txtName";
 			if(priceFrom != null && priceTo != null) {
+				//Nhớ giữa " với AND phải có dấu cách (vì đang nối 2 chuỗi)
 				hql += " AND gia >= :priceFrom AND gia <= :priceTo";
 			}
 			
