@@ -2,6 +2,8 @@ package dao;
 
 import java.util.List;
 
+import javax.persistence.Query;
+
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 
@@ -100,6 +102,56 @@ public class ImplSanPhamDAO implements ISanPhamDAO{
 			ss.close();
 		}
 		return false;
+	}
+
+	@Override
+	public List<SanPham> search(String name, Double priceFrom, Double priceTo) {
+		Session ss = sf.openSession();
+		ss.getTransaction().begin();
+		try {
+			String hql = "from SanPham WHERE tenSanPham LIKE :txtName";
+			if(priceFrom != null && priceTo != null) {
+				hql += " AND gia >= :priceFrom AND gia <= :priceTo";
+			}
+			
+			Query query = ss.createQuery(hql);
+			query.setParameter("txtName", "%" + name + "%");
+			if(priceFrom != null && priceTo != null) {
+				query.setParameter("priceFrom", priceFrom);
+				query.setParameter("priceTo", priceTo);
+			}
+			
+			List<SanPham> lst = ((org.hibernate.query.Query) query).list();
+			ss.getTransaction().commit();
+			return lst;
+			
+		} catch (Exception e) {
+			System.out.println("Lỗi: " + e.getMessage());
+			ss.getTransaction().rollback();
+		} finally {
+			ss.close();
+		}
+		return null;
+	}
+
+	@Override
+	public List<SanPham> sortByCategory(int maDanhMuc) {
+		Session ss = sf.openSession();
+		ss.getTransaction().begin();
+		try {
+			String hql = "from SanPham WHERE maDanhMuc = :maDM";
+			Query query = ss.createQuery(hql);
+			query.setParameter("maDM", maDanhMuc);
+			List<SanPham> lst = ((org.hibernate.query.Query) query).list();
+			ss.getTransaction().commit();
+			return lst;
+		} catch (Exception e) {
+			System.out.println("ERR: " + e.getMessage());
+			ss.getTransaction().rollback();
+		} finally {
+			ss.close();
+		}
+		return null;
 	}
 
 }

@@ -13,6 +13,17 @@
 <body>
 	<jsp:include page="menu.jsp"></jsp:include>
 	<div class="main">
+		<form action="${rootpath}/search" method="get">
+			<label for="txtName">Nhập tên sản phẩm tìm kiếm</label>
+			<input name="txtName" type="text" id="txtName">
+			<br>
+			<label for="priceFrom">Nhập khoảng giá tìm kiếm</label>
+			<input name="priceFrom" type="number" id="priceFrom">
+			Đến
+			<input name="priceTo" type="number" id="priceTo">
+			<button type="submit">Tìm</button>
+		</form>
+		
         <!-- Thẻ info từng sản phẩm -->
         <div class="product-list">
             <c:forEach items="${lstSanPham }" var="p">
@@ -25,6 +36,7 @@
                 <p style="text-decoration: none">${p.gia}</p>
             </a>
             </c:forEach>
+    </div>
     </div>
 </body>	
 </html>

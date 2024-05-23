@@ -14,4 +14,8 @@ public interface ISanPhamDAO {
 	public boolean update(SanPham sp);
 	
 	public boolean delete(int id);
+	
+	public List<SanPham> search(String name, Double priceFrom, Double priceTo);
+	
+	public List<SanPham> sortByCategory(int maDanhMuc);
 }

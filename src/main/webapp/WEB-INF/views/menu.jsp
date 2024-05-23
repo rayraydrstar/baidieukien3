@@ -16,8 +16,8 @@
 
 <ul class="vertical-menu">
 	<!-- Note: đang ở trang nào thì thêm class = "active" ở thẻ a của trang đó -->
-	<li><a class="active" href="#home">Thực phẩm</a></li>
-	<li><a href="#news">Quần áo</a></li>
-	<li><a href="#contact">Điện tử</a></li>
-	<li><a href="#about">Xe cộ</a></li>
+	<li><a class="active" href="${rootpath}sort_by_category?maDanhMuc=1">Thực phẩm</a></li>
+	<li><a href="${rootpath}sort_by_category?maDanhMuc=2">Quần áo</a></li>
+	<li><a href="${rootpath}sort_by_category?maDanhMuc=3">Điện tử</a></li>
+	<li><a href="${rootpath}sort_by_category?maDanhMuc=4">Gia dụng</a></li>
 </ul>

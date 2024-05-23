@@ -9,6 +9,7 @@ import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 
 import dao.IDanhMucDAO;
@@ -103,6 +104,25 @@ public class ProductController {
 	private String delete(@RequestParam(name = "id", required = true) Integer id, Model m) {
 		ISanPhamDAO spDAO = new ImplSanPhamDAO();
 		spDAO.delete(id);
+		return "index";
+	}
+	
+	@RequestMapping(path = "/search", method = RequestMethod.GET )
+	private String search(@RequestParam(name = "txtName", required = false) String txtName, 
+						  @RequestParam(name = "priceFrom", required = false) Double priceFrom,
+						  @RequestParam(name = "priceTo", required = false) Double priceTo,
+						  Model m) {
+		ISanPhamDAO spDAO = new ImplSanPhamDAO();
+		List<SanPham> lstSanPham =  spDAO.search(txtName, priceFrom, priceTo);
+		m.addAttribute("lstSanPham", lstSanPham);
+		return "index";
+	}
+	
+	@RequestMapping(path = "/sort_by_category")
+	private String sortByCategory(@RequestParam(name = "maDanhMuc", required = true) Integer maDanhMuc, Model m) {
+		ISanPhamDAO spDAO = new ImplSanPhamDAO();
+		List<SanPham> lstSanPham = spDAO.sortByCategory(maDanhMuc);
+		m.addAttribute("lstSanPham", lstSanPham);
 		return "index";
 	}
 }
