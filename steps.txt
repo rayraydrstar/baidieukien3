@@ -1,0 +1,25 @@
+1. Tạo DB - fake dữ liệu
+
+2. Tạo project trong eclipse - Convert project sang maven project
+
+3. Kiểm tra server - nếu chưa có server hoặc server có sẵn của eclipse -> Cài server mới
+
+4. Chỉnh pom.xml
+
+5. Chỉnh web.xml
+
+6. Tạo + chỉnh sửa springmvc_config.xml trong WEB-INF
+
+7. Tạo + chỉnh hibernate config (Tên db, map các entity)
+
+8. Tạo các entity:
+	a. Các thuộc tính	
+	b. Các annotation (@Column, validate, @Id, @GeneratedValue)
+	c.Construction - Get/Set
+
+9. Tạo interfaceDAO - implementInterfaceDAO
+
+10. Tạo controller đẩy dữ liệu về view
+
+
+11. tạo view
